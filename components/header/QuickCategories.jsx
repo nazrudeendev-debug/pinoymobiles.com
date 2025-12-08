@@ -30,15 +30,15 @@ const quickCategories = [
 
 export default function QuickCategories() {
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
-        Quick filters:
+    <>
+      <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+        Quick Filters:
       </span>
       {quickCategories.map((cat) => (
         <Link
           key={cat.name}
           href={cat.href}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-all hover:shadow-sm ${cat.color}`}
+          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all hover:shadow-sm ${cat.color}`}
         >
           <span>{cat.icon}</span>
           {cat.name}
@@ -46,11 +46,11 @@ export default function QuickCategories() {
       ))}
       <Link
         href="/phones"
-        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium text-violet-600 hover:text-violet-700 hover:bg-violet-50 transition-all ml-auto"
+        className="inline-flex items-center gap-1 text-xs font-semibold text-violet-600 hover:text-violet-700 transition-colors"
       >
         View all
         <ArrowRight className="h-3 w-3" />
       </Link>
-    </div>
+    </>
   );
 }

@@ -28,7 +28,7 @@ export default function PhoneCarousel({
   };
 
   return (
-    <section className="mx-auto mt-16 w-full max-w-7xl px-4 md:px-6">
+    <section className="mx-auto mt-8 md:mt-10 w-full max-w-7xl px-4 md:px-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
