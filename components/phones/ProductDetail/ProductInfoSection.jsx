@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Star,
   TrendingDown,
@@ -10,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { formatCurrency } from "@/lib/format";
+import VariantSelector from "./VariantSelector";
 
 export function ProductInfoSection({
   phone,
@@ -17,6 +19,25 @@ export function ProductInfoSection({
   highestPrice,
   retailersCount,
 }) {
+  // Variant state management
+  const [selectedVariant, setSelectedVariant] = useState(
+    phone.variants?.[0] || null
+  );
+
+  // Update selected variant when phone changes
+  useEffect(() => {
+    setSelectedVariant(phone.variants?.[0] || null);
+  }, [phone]);
+
+  // Calculate display price based on selected variant
+  const displayPrice = selectedVariant?.price || phone.price;
+  const variantLowestPrice = selectedVariant?.price
+    ? Math.round(selectedVariant.price * 0.95)
+    : lowestPrice;
+  const variantHighestPrice = selectedVariant?.price
+    ? Math.round(selectedVariant.price * 1.05)
+    : highestPrice;
+
   return (
     <div className="lg:col-span-7">
       <div className="flex items-center gap-3 mb-3">
@@ -46,9 +67,22 @@ export function ProductInfoSection({
       </h1>
 
       <p className="text-sm md:text-base text-slate-600 mb-4 md:mb-6 leading-relaxed">
-        {phone.specs?.storage || "256GB"} • {phone.specs?.ram || "8GB RAM"} •{" "}
+        {selectedVariant?.storage || phone.specs?.storage || "256GB"} •{" "}
+        {phone.specs?.ram || "8GB RAM"} •{" "}
         {phone.specs?.display?.split(",")[0] || '6.7" AMOLED Display'}
       </p>
+
+      {/* Variant Selector */}
+      {phone.variants && phone.variants.length > 0 && (
+        <div className="bg-white border border-slate-200 rounded-xl p-4 md:p-5 mb-4 md:mb-6">
+          <VariantSelector
+            variants={phone.variants}
+            selectedVariant={selectedVariant}
+            onVariantChange={setSelectedVariant}
+            basePrice={phone.price}
+          />
+        </div>
+      )}
 
       <div className="bg-slate-50 rounded-xl md:rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
         <p className="text-sm text-slate-600 mb-1 md:mb-2">
@@ -56,18 +90,19 @@ export function ProductInfoSection({
         </p>
         <div className="flex flex-wrap items-baseline gap-2">
           <span className="text-xl md:text-2xl font-bold text-slate-900">
-            {formatCurrency(lowestPrice)}
+            {formatCurrency(variantLowestPrice)}
           </span>
           <span className="text-sm md:text-base text-slate-400">to</span>
           <span className="text-base md:text-lg font-semibold text-slate-500">
-            {formatCurrency(highestPrice)}
+            {formatCurrency(variantHighestPrice)}
           </span>
         </div>
         <div className="flex items-center gap-2 mt-3 md:mt-4">
           <TrendingDown className="h-4 w-4 text-emerald-600" />
           <span className="text-sm text-emerald-600 font-medium">
-            Save up to {formatCurrency(highestPrice - lowestPrice)} by comparing
-            prices
+            Save up to{" "}
+            {formatCurrency(variantHighestPrice - variantLowestPrice)} by
+            comparing prices
           </span>
         </div>
       </div>

@@ -1,21 +1,21 @@
-import { Geist, Geist_Mono, Mona_Sans, Inter, Poppins } from "next/font/google";
+import { Lexend, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Lexend - Designed for readability, clean modern look
+const lexend = Lexend({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// JetBrains Mono for code/specs
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
-});
-
-const monaSans = Poppins({
-  variable: "--font-mona",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "600", "800", "900"],
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${monaSans.variable} antialiased`}
+        className={`${lexend.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
         <div className="flex flex-col min-h-screen">
           <div className="flex-1">{children}</div>
