@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Star, Shield, BadgeCheck } from "lucide-react";
 import { formatCurrency } from "@/lib/format";
+import { PinoyScoreBadge } from "@/components/ui/PinoyScore";
 
 export default function CarouselPhoneCard({
   phone,
@@ -14,6 +15,7 @@ export default function CarouselPhoneCard({
   subtitle,
   showTrustedBadge = false,
   showSulitBadge = false,
+  showPinoyScore = true,
 }) {
   return (
     <Link
@@ -71,16 +73,12 @@ export default function CarouselPhoneCard({
 
         {/* Content */}
         <div className="space-y-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between">
             <span className="text-[10px] font-semibold text-slate-500 uppercase">
               {phone.brand}
             </span>
-            <div className="flex items-center gap-0.5">
-              <Star className="h-3 w-3 fill-[#F9B434] text-[#F9B434]" />
-              <span className="text-[10px] font-semibold text-slate-700">
-                {phone.rating}
-              </span>
-            </div>
+            {/* Pinoy Score Badge */}
+            {showPinoyScore && <PinoyScoreBadge score={phone.rating} />}
           </div>
 
           <h3
@@ -92,12 +90,19 @@ export default function CarouselPhoneCard({
           </h3>
 
           <div className="pt-2 border-t border-slate-100">
-            <p className={`text-lg font-bold ${priceColor}`}>
-              {formatCurrency(phone.price)}
-            </p>
-            {subtitle && (
-              <p className="text-[10px] text-slate-500">{subtitle}</p>
-            )}
+            <div className="flex items-center justify-between">
+              <div>
+                <p className={`text-lg font-bold ${priceColor}`}>
+                  {formatCurrency(phone.price)}
+                </p>
+                {subtitle && (
+                  <p className="text-[10px] text-slate-500">{subtitle}</p>
+                )}
+              </div>
+              <span className="text-[9px] text-slate-400 text-right">
+                from 5+ stores
+              </span>
+            </div>
           </div>
         </div>
       </div>

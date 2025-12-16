@@ -14,8 +14,8 @@ export default function Home() {
       <main className="pb-20 font-mona">
         <Hero />
         <PopularPhones />
-        <LatestPhones />
         <BudgetPhones />
+        <LatestPhones />
         <UpcomingPhones />
         <BrandsSection />
         <ComparisonPromo />

@@ -8,10 +8,25 @@ import {
   Zap,
   ChevronDown,
   Bell,
+  Award,
+  ThumbsUp,
+  ThumbsDown,
 } from "lucide-react";
 import Link from "next/link";
 import { formatCurrency } from "@/lib/format";
 import VariantSelector from "./VariantSelector";
+
+// Calculate Pinoy Score
+function calculatePinoyScore(phone) {
+  let score = phone.rating || 4.0;
+
+  // Adjust based on category
+  if (phone.category === "Flagship") score += 0.3;
+  else if (phone.category === "Gaming") score += 0.2;
+
+  // Cap at 9.9
+  return Math.min(score, 9.9).toFixed(1);
+}
 
 export function ProductInfoSection({
   phone,
@@ -38,43 +53,72 @@ export function ProductInfoSection({
     ? Math.round(selectedVariant.price * 1.05)
     : highestPrice;
 
+  const pinoyScore = calculatePinoyScore(phone);
+  const isRecommended = parseFloat(pinoyScore) >= 4.5;
+
   return (
     <div className="lg:col-span-7">
-      <div className="flex items-center gap-3 mb-3">
-        <div className="flex items-center gap-1">
-          {[1, 2, 3, 4].map((i) => (
-            <Star
-              key={i}
-              className="h-4 w-4 md:h-5 md:w-5 fill-amber-400 text-amber-400"
-            />
-          ))}
-          <Star className="h-4 w-4 md:h-5 md:w-5 fill-amber-400/30 text-amber-400" />
+      {/* Pinoy Score & Rating Row */}
+      <div className="flex items-center justify-between gap-4 mb-4">
+        <div className="flex items-center gap-3">
+          {/* Star Rating */}
+          <div className="flex items-center gap-1">
+            {[1, 2, 3, 4].map((i) => (
+              <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+            ))}
+            <Star className="h-4 w-4 fill-amber-400/30 text-amber-400" />
+          </div>
+          <span className="text-sm font-semibold text-slate-900">
+            {phone.rating}
+          </span>
+          <Link
+            href="#reviews"
+            className="text-sm text-[#6C2BD9] hover:underline hidden md:inline"
+          >
+            847 reviews
+          </Link>
         </div>
-        <span className="text-sm md:text-base font-semibold text-slate-900">
-          {phone.rating}
-        </span>
-        <span className="text-sm text-slate-500 hidden md:inline">•</span>
-        <Link
-          href="#reviews"
-          className="text-sm text-violet-600 hover:underline hidden md:inline"
-        >
-          847 reviews
-        </Link>
+
+        {/* Pinoy Score Badge */}
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#6C2BD9] to-[#5521B0]">
+          <Award className="h-4 w-4 text-[#F9B434]" />
+          <span className="text-sm font-bold text-white">
+            {pinoyScore} Pinoy Score
+          </span>
+        </div>
       </div>
 
-      <h1 className="text-lg md:text-2xl font-bold text-slate-900 mb-2 leading-tight">
+      {/* Phone Name */}
+      <h1 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 leading-tight">
         {phone.name}
       </h1>
 
-      <p className="text-sm md:text-base text-slate-600 mb-4 md:mb-6 leading-relaxed">
+      {/* Quick Specs */}
+      <p className="text-sm text-slate-500 mb-4">
         {selectedVariant?.storage || phone.specs?.storage || "256GB"} •{" "}
         {phone.specs?.ram || "8GB RAM"} •{" "}
-        {phone.specs?.display?.split(",")[0] || '6.7" AMOLED Display'}
+        {phone.specs?.display?.split(",")[0] || '6.7" Display'}
       </p>
+
+      {/* Verdict Badge */}
+      {isRecommended && (
+        <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50 border border-emerald-200 mb-4">
+          <ThumbsUp className="h-5 w-5 text-emerald-600" />
+          <div>
+            <span className="text-sm font-bold text-emerald-700">
+              Worth Buying
+            </span>
+            <span className="text-xs text-emerald-600 ml-2">
+              Great{" "}
+              {phone.price < 20000 ? "value for budget" : "flagship choice"}
+            </span>
+          </div>
+        </div>
+      )}
 
       {/* Variant Selector */}
       {phone.variants && phone.variants.length > 0 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-4 md:p-5 mb-4 md:mb-6">
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4">
           <VariantSelector
             variants={phone.variants}
             selectedVariant={selectedVariant}
@@ -84,58 +128,95 @@ export function ProductInfoSection({
         </div>
       )}
 
-      <div className="bg-slate-50 rounded-xl md:rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
-        <p className="text-sm text-slate-600 mb-1 md:mb-2">
-          Compare prices from
-        </p>
-        <div className="flex flex-wrap items-baseline gap-2">
-          <span className="text-xl md:text-2xl font-bold text-slate-900">
+      {/* Price Box */}
+      <div className="bg-gradient-to-br from-[#6C2BD9]/5 to-[#F9B434]/5 border border-[#6C2BD9]/20 rounded-xl p-4 mb-4">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">
+            Best Price Today
+          </span>
+          <span className="text-xs text-emerald-600 font-medium flex items-center gap-1">
+            <TrendingDown className="h-3 w-3" />
+            Save up to{" "}
+            {formatCurrency(variantHighestPrice - variantLowestPrice)}
+          </span>
+        </div>
+        <div className="flex items-baseline gap-2">
+          <span className="text-2xl md:text-3xl font-bold text-[#6C2BD9]">
             {formatCurrency(variantLowestPrice)}
           </span>
-          <span className="text-sm md:text-base text-slate-400">to</span>
-          <span className="text-base md:text-lg font-semibold text-slate-500">
+          <span className="text-sm text-slate-400">to</span>
+          <span className="text-lg font-semibold text-slate-500">
             {formatCurrency(variantHighestPrice)}
           </span>
         </div>
-        <div className="flex items-center gap-2 mt-3 md:mt-4">
-          <TrendingDown className="h-4 w-4 text-emerald-600" />
-          <span className="text-sm text-emerald-600 font-medium">
-            Save up to{" "}
-            {formatCurrency(variantHighestPrice - variantLowestPrice)} by
-            comparing prices
-          </span>
+        <p className="text-xs text-slate-400 mt-2">
+          From {retailersCount} verified sellers • Prices updated today
+        </p>
+      </div>
+
+      {/* Quick Pros & Cons */}
+      <div className="grid grid-cols-2 gap-3 mb-4">
+        <div className="p-3 rounded-lg bg-emerald-50 border border-emerald-100">
+          <div className="flex items-center gap-1.5 mb-2">
+            <ThumbsUp className="h-4 w-4 text-emerald-600" />
+            <span className="text-xs font-semibold text-emerald-700">Pros</span>
+          </div>
+          <ul className="space-y-1">
+            {(phone.pros || ["Great performance", "Good camera"])
+              .slice(0, 2)
+              .map((pro, i) => (
+                <li
+                  key={i}
+                  className="text-xs text-emerald-700 flex items-start gap-1"
+                >
+                  <span className="mt-0.5">+</span> {pro}
+                </li>
+              ))}
+          </ul>
+        </div>
+        <div className="p-3 rounded-lg bg-red-50 border border-red-100">
+          <div className="flex items-center gap-1.5 mb-2">
+            <ThumbsDown className="h-4 w-4 text-red-500" />
+            <span className="text-xs font-semibold text-red-600">Cons</span>
+          </div>
+          <ul className="space-y-1">
+            {(phone.cons || ["High price", "No charger"])
+              .slice(0, 2)
+              .map((con, i) => (
+                <li
+                  key={i}
+                  className="text-xs text-red-600 flex items-start gap-1"
+                >
+                  <span className="mt-0.5">−</span> {con}
+                </li>
+              ))}
+          </ul>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-4 md:mb-6">
-        <div className="flex items-center gap-2 p-2.5 md:p-3 rounded-lg bg-slate-50">
-          <Package className="h-4 w-4 text-violet-600 shrink-0" />
-          <span className="text-xs md:text-sm text-slate-700">
-            Free shipping
-          </span>
+      {/* Trust Badges */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+        <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-50">
+          <Package className="h-4 w-4 text-[#6C2BD9] shrink-0" />
+          <span className="text-xs text-slate-600">Free shipping</span>
         </div>
-        <div className="flex items-center gap-2 p-2.5 md:p-3 rounded-lg bg-slate-50">
-          <Clock className="h-4 w-4 text-violet-600 shrink-0" />
-          <span className="text-xs md:text-sm text-slate-700">
-            1-5 days delivery
-          </span>
+        <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-50">
+          <Clock className="h-4 w-4 text-[#6C2BD9] shrink-0" />
+          <span className="text-xs text-slate-600">1-5 days</span>
         </div>
-        <div className="flex items-center gap-2 p-2.5 md:p-3 rounded-lg bg-slate-50">
-          <ShieldCheck className="h-4 w-4 text-violet-600 shrink-0" />
-          <span className="text-xs md:text-sm text-slate-700">
-            Verified sellers
-          </span>
+        <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-50">
+          <ShieldCheck className="h-4 w-4 text-[#6C2BD9] shrink-0" />
+          <span className="text-xs text-slate-600">Verified sellers</span>
         </div>
-        <div className="flex items-center gap-2 p-2.5 md:p-3 rounded-lg bg-slate-50">
-          <Zap className="h-4 w-4 text-violet-600 shrink-0" />
-          <span className="text-xs md:text-sm text-slate-700">
-            Price drop alert
-          </span>
+        <div className="flex items-center gap-2 p-2 rounded-lg bg-slate-50">
+          <Zap className="h-4 w-4 text-[#6C2BD9] shrink-0" />
+          <span className="text-xs text-slate-600">Price alerts</span>
         </div>
       </div>
 
+      {/* CTA Buttons */}
       <div className="hidden md:flex gap-3">
-        <button className="flex-1 bg-violet-600 hover:bg-violet-700 text-white py-3.5 px-6 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-2">
+        <button className="flex-1 bg-[#6C2BD9] hover:bg-[#5521B0] text-white py-3.5 px-6 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#6C2BD9]/20">
           Compare {retailersCount} Prices
           <ChevronDown className="h-5 w-5" />
         </button>

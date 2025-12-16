@@ -1,99 +1,139 @@
-import { CheckCircle2, TrendingUp, Tag, Shield, Sparkles } from "lucide-react";
+import {
+  Star,
+  ArrowRight,
+  Smartphone,
+  Wallet,
+  Target,
+  GitCompare,
+  Camera,
+  Battery,
+  Gamepad2,
+  Briefcase,
+} from "lucide-react";
+import Link from "next/link";
 import HeroSearch from "./HeroSearch";
-import QuickCategories from "./QuickCategories";
 import PhFlag from "@/components/ui/PhFlag";
+
+const actionCards = [
+  {
+    id: "all-phones",
+    icon: Smartphone,
+    title: "All Phones",
+    description: "Browse with reviews & prices",
+    href: "/phones",
+    color: "from-[#6C2BD9] to-[#5521B0]",
+  },
+  {
+    id: "by-budget",
+    icon: Wallet,
+    title: "By Budget",
+    description: "Under ₱10k, ₱15k, ₱20k",
+    href: "/phones?sort=budget",
+    color: "from-[#4CB9A8] to-[#3B9C8D]",
+    badge: "🔥",
+  },
+  {
+    id: "best-for-you",
+    icon: Target,
+    title: "Best for You",
+    description: "Camera • Gaming • Work",
+    href: "/phones?filter=purpose",
+    color: "from-[#F9B434] to-[#E5A020]",
+  },
+  {
+    id: "compare",
+    icon: GitCompare,
+    title: "Compare",
+    description: "Side-by-side comparison",
+    href: "/compare",
+    color: "from-[#DC2626] to-[#B91C1C]",
+  },
+];
 
 export default function Hero() {
   return (
-    <section className="bg-linear-to-b from-[#FAF6ED] to-white py-5 md:py-6 banig-pattern">
+    <section className="bg-gradient-to-b from-[#FAF6ED] to-white py-6 md:py-8 banig-pattern">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
-        {/* Hero Card */}
-        <div className="bg-white rounded-xl shadow-md border border-slate-100 p-4 md:p-6 relative overflow-hidden">
-          {/* Subtle sun rays background */}
-          <div className="absolute inset-0 sunrays-pattern opacity-50 pointer-events-none" />
+        {/* Main Hero Card */}
+        <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-5 md:p-8 relative overflow-hidden">
+          {/* Subtle background pattern */}
+          <div className="absolute inset-0 sunrays-pattern opacity-30 pointer-events-none" />
 
-          <div className="relative flex flex-col lg:flex-row lg:items-stretch gap-5 lg:gap-8">
-            {/* Left: Title, Search, Filters */}
-            <div className="flex-1 flex flex-col">
-              {/* Title with Filipino flair */}
-              <div className="mb-4">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F9B434]/10 text-[#E5A020] text-[10px] font-bold">
-                    <Sparkles className="w-3 h-3" />
-                    #1 sa Pilipinas
-                  </span>
-                </div>
-                <h1 className="text-xl sm:text-2xl font-bold text-[#1F2A44] mb-1 flex items-center gap-2">
-                  Hanap mo, Sulit Presyo!{" "}
-                  <PhFlag className="w-6 h-4 inline-block" />
-                </h1>
-                <p className="text-sm text-slate-500">
-                  I-compare ang prices mula sa 6,300+{" "}
-                  <span className="text-[#4CB9A8] font-medium">
-                    Verified PH Sellers
-                  </span>
-                </p>
+          <div className="relative">
+            {/* Top: Title + Search */}
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#6C2BD9]/10 text-[#6C2BD9] text-xs font-bold mb-3">
+                <Star className="w-3.5 h-3.5 fill-current" />
+                #1 Phone Guide sa Pilipinas
               </div>
-
-              {/* Search Bar - Full width */}
-              <div className="w-full mb-4">
-                <HeroSearch />
-              </div>
-
-              {/* Quick Filters */}
-              <div className="flex flex-wrap items-center gap-2">
-                <QuickCategories />
-              </div>
+              <h1 className="text-2xl md:text-3xl font-bold text-[#1F2A44] mb-2 flex items-center justify-center gap-2">
+                Find the Right Phone for You
+                <PhFlag className="w-7 h-5" />
+              </h1>
+              <p className="text-sm md:text-base text-slate-500 max-w-lg mx-auto">
+                Honest reviews, Pinoy Scores & best prices from{" "}
+                <span className="text-[#4CB9A8] font-semibold">
+                  trusted PH stores
+                </span>
+              </p>
             </div>
 
-            {/* Right: Feature highlights - Filipino themed */}
-            <div className="w-full lg:w-72 xl:w-80 shrink-0 pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-slate-100 lg:pl-6">
-              <div className="flex flex-row lg:flex-col gap-3">
-                {/* Feature 1 - Sulit Deals */}
-                <div className="flex-1 lg:flex-none flex items-center gap-3 p-3 rounded-xl bg-[#F9B434]/10 border border-[#F9B434]/20 tricycle-bounce">
-                  <div className="w-9 h-9 rounded-lg bg-linear-to-br from-[#F9B434] to-[#E5A020] flex items-center justify-center shrink-0 shadow-sm">
-                    <Tag className="w-4 h-4 text-[#1F2A44]" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-[#1F2A44]">
-                      Sulit Deals
-                    </p>
-                    <p className="text-xs text-slate-500 hidden sm:block">
-                      Pinakamurang presyo
-                    </p>
-                  </div>
-                </div>
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-8">
+              <HeroSearch />
+            </div>
 
-                {/* Feature 2 - Live Updates */}
-                <div className="flex-1 lg:flex-none flex items-center gap-3 p-3 rounded-xl bg-[#6C2BD9]/5 border border-[#6C2BD9]/10 tricycle-bounce">
-                  <div className="w-9 h-9 rounded-lg bg-linear-to-br from-[#6C2BD9] to-[#5521B0] flex items-center justify-center shrink-0 shadow-sm">
-                    <TrendingUp className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-[#1F2A44]">
-                      Live Updates
-                    </p>
-                    <p className="text-xs text-slate-500 hidden sm:block">
-                      Real-time na presyo
-                    </p>
-                  </div>
-                </div>
+            {/* Action Cards Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {actionCards.map((card) => (
+                <Link
+                  key={card.id}
+                  href={card.href}
+                  className="group relative flex items-center gap-3 p-3 md:p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 hover:bg-white hover:shadow-md transition-all duration-200"
+                >
+                  {/* Badge */}
+                  {card.badge && (
+                    <span className="absolute -top-1.5 -right-1.5 text-sm">
+                      {card.badge}
+                    </span>
+                  )}
 
-                {/* Feature 3 - Trusted PH Sellers */}
-                <div className="flex-1 lg:flex-none flex items-center gap-3 p-3 rounded-xl bg-[#4CB9A8]/10 border border-[#4CB9A8]/20 tricycle-bounce">
-                  <div className="w-9 h-9 rounded-lg bg-linear-to-br from-[#4CB9A8] to-[#3B9C8D] flex items-center justify-center shrink-0 shadow-sm">
-                    <Shield className="w-4 h-4 text-white" />
+                  {/* Icon */}
+                  <div
+                    className={`w-10 h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br ${card.color} flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform`}
+                  >
+                    <card.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-[#1F2A44]">
-                      Trusted PH
-                    </p>
-                    <p className="text-xs text-slate-500 hidden sm:block">
-                      100% Legit Stores
+
+                  {/* Text */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-bold text-[#1F2A44] group-hover:text-[#6C2BD9] transition-colors truncate">
+                      {card.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 truncate">
+                      {card.description}
                     </p>
                   </div>
-                </div>
-              </div>
+
+                  {/* Arrow on hover */}
+                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#6C2BD9] opacity-0 group-hover:opacity-100 transition-all shrink-0 hidden md:block" />
+                </Link>
+              ))}
+            </div>
+
+            {/* Bottom stats line */}
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-center gap-4 md:gap-8 text-xs text-slate-400">
+              <span>
+                <strong className="text-[#6C2BD9]">6,300+</strong> phones
+              </span>
+              <span className="hidden sm:inline">•</span>
+              <span className="hidden sm:inline">
+                <strong className="text-[#4CB9A8]">50+</strong> brands
+              </span>
+              <span>•</span>
+              <span>
+                <strong className="text-[#F9B434]">5+</strong> trusted stores
+              </span>
             </div>
           </div>
         </div>
