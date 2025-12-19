@@ -58,7 +58,7 @@ export default function PhonesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-slate-50">
+      <main className="min-h-screen bg-[#F7F7F7]">
         <PhonePageHeader />
         <QuickFilterTabs
           activeTab={activeTab}
@@ -112,10 +112,10 @@ export default function PhonesPage() {
 
               {filteredPhones.length === 0 && (
                 <div className="text-center py-16">
-                  <p className="text-lg font-semibold text-slate-900">
+                  <p className="text-lg font-semibold text-[#232323]">
                     No phones found
                   </p>
-                  <p className="mt-2 text-sm text-slate-600">
+                  <p className="mt-2 text-sm text-[#232323]">
                     Try adjusting your filters to find what you&apos;re looking
                     for.
                   </p>
@@ -130,7 +130,7 @@ export default function PhonesPage() {
 
               {filteredPhones.length > 0 && (
                 <div className="mt-8 text-center">
-                  <p className="text-sm text-slate-600 mb-4">
+                  <p className="text-sm text-[#232323] mb-4">
                     You&apos;ve viewed {filteredPhones.length} out of{" "}
                     {phones.length} products
                   </p>

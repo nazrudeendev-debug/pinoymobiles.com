@@ -56,7 +56,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#F7F7F7]">
         {/* Hero Section */}
         <section className="bg-linear-to-br from-violet-600 via-purple-600 to-indigo-700 text-white">
           <div className="mx-auto max-w-7xl px-4 py-16 md:py-24">
@@ -75,7 +75,7 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="border-b border-slate-200">
+        <section className="border-b border-[#E5E5E5]">
           <div className="mx-auto max-w-7xl px-4 py-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat) => (
@@ -83,7 +83,7 @@ export default function AboutPage() {
                   <div className="text-3xl md:text-4xl font-bold text-violet-600">
                     {stat.value}
                   </div>
-                  <div className="mt-2 text-sm text-slate-600">
+                  <div className="mt-2 text-sm text-[#232323]">
                     {stat.label}
                   </div>
                 </div>
@@ -101,34 +101,34 @@ export default function AboutPage() {
                   <Target className="w-4 h-4" />
                   Our Mission
                 </div>
-                <h2 className="text-3xl font-bold text-slate-900">
+                <h2 className="text-3xl font-bold text-[#232323]">
                   Making Phone Shopping Simple
                 </h2>
-                <p className="mt-4 text-slate-600 leading-relaxed">
+                <p className="mt-4 text-[#232323] leading-relaxed">
                   We believe every Filipino deserves access to transparent
                   pricing and honest reviews. Our mission is to eliminate the
                   confusion from phone shopping by providing a single platform
                   where you can compare everything that matters.
                 </p>
-                <p className="mt-4 text-slate-600 leading-relaxed">
+                <p className="mt-4 text-[#232323] leading-relaxed">
                   From budget-friendly options to flagship devices, we cover
                   every phone available in the Philippine market with accurate,
                   up-to-date information.
                 </p>
               </div>
-              <div className="bg-slate-100 rounded-2xl p-8">
+              <div className="bg-[#F7F7F7] rounded-2xl p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-violet-600 rounded-xl flex items-center justify-center">
                     <Users className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900">Our Team</h3>
-                    <p className="text-sm text-slate-600">
+                    <h3 className="font-bold text-[#232323]">Our Team</h3>
+                    <p className="text-sm text-[#232323]">
                       Mobile enthusiasts & tech experts
                     </p>
                   </div>
                 </div>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-[#232323] leading-relaxed">
                   Our team consists of passionate mobile technology experts,
                   developers, and customer experience specialists dedicated to
                   providing you with the best phone comparison experience.
@@ -139,11 +139,11 @@ export default function AboutPage() {
         </section>
 
         {/* Values Section */}
-        <section className="py-16 bg-slate-50">
+        <section className="py-16 bg-[#F7F7F7]">
           <div className="mx-auto max-w-7xl px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-slate-900">Our Values</h2>
-              <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold text-[#232323]">Our Values</h2>
+              <p className="mt-3 text-[#232323] max-w-2xl mx-auto">
                 These core values guide everything we do at PinoyMobiles
               </p>
             </div>
@@ -153,15 +153,15 @@ export default function AboutPage() {
                 return (
                   <div
                     key={value.title}
-                    className="bg-white rounded-xl p-6 border border-slate-200"
+                    className="bg-[#F7F7F7] rounded-xl p-6 border border-[#E5E5E5]"
                   >
                     <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-violet-600" />
                     </div>
-                    <h3 className="font-bold text-slate-900 mb-2">
+                    <h3 className="font-bold text-[#232323] mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-[#232323] leading-relaxed">
                       {value.description}
                     </p>
                   </div>

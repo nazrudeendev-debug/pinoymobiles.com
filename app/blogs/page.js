@@ -23,7 +23,7 @@ export default function BlogsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-slate-50">
+      <main className="min-h-screen bg-[#F7F7F7]">
         <FeaturedBlogCard blog={featuredBlog} />
 
         <BlogFilters
@@ -37,7 +37,7 @@ export default function BlogsPage() {
           resultCount={filteredBlogs.length}
         />
 
-        <section className="bg-slate-50">
+        <section className="bg-[#F7F7F7]">
           <div className="mx-auto max-w-7xl px-4 py-8 md:py-12">
             {filteredBlogs.length > 0 ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -47,10 +47,10 @@ export default function BlogsPage() {
               </div>
             ) : (
               <div className="text-center py-16">
-                <p className="text-lg font-semibold text-slate-900">
+                <p className="text-lg font-semibold text-[#232323]">
                   No articles found
                 </p>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-[#232323]">
                   Try adjusting your search or filter criteria.
                 </p>
               </div>

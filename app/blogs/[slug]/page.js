@@ -46,7 +46,7 @@ export default async function BlogDetailPage({ params }) {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-slate-50">
+      <main className="min-h-screen bg-[#F7F7F7]">
         <BlogHeader blog={blog} />
 
         <div className="mx-auto max-w-7xl px-4 py-10">
@@ -59,7 +59,7 @@ export default async function BlogDetailPage({ params }) {
           </div>
         </div>
 
-        <div className="bg-white border-t border-slate-200">
+        <div className="bg-[#F7F7F7] border-t border-[#E5E5E5]">
           <div className="mx-auto max-w-7xl px-4 py-6">
             <Link
               href="/blogs"

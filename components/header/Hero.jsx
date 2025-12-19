@@ -55,7 +55,7 @@ export default function Hero() {
     <section className="bg-gradient-to-b from-[#FAFAFA] to-white py-6 md:py-8 arabic-pattern">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         {/* Main Hero Card */}
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-5 md:p-8 relative overflow-hidden">
+        <div className="bg-[#FFFFFF] rounded-2xl shadow-lg border border-[#E5E5E5] p-5 md:p-8 relative overflow-hidden">
           {/* Subtle background pattern */}
           <div className="absolute inset-0 sunrays-pattern opacity-30 pointer-events-none" />
 
@@ -89,7 +89,7 @@ export default function Hero() {
                 <Link
                   key={card.id}
                   href={card.href}
-                  className="group relative flex items-center gap-3 p-3 md:p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 hover:bg-white hover:shadow-md transition-all duration-200"
+                  className="group relative flex items-center gap-3 p-3 md:p-4 rounded-xl bg-[#F7F7F7] border border-[#E5E5E5] hover:border-[#B0B0B0] hover:bg-[#FFFFFF] hover:shadow-md transition-all duration-200"
                 >
                   {/* Badge */}
                   {card.badge && (

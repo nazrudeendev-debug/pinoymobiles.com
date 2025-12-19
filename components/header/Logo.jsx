@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2 group">
       {/* UAE-Modern Logo Icon */}
-      <div className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-linear-to-br from-[#00843D] to-[#006B31] shadow-lg shadow-[#00843D]/30 group-hover:shadow-[#00843D]/50 transition-all duration-300">
+      <div className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-foreground shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all duration-300">
         <svg
           width="28"
           height="28"
@@ -30,8 +30,8 @@ export default function Logo() {
             rx="2"
             fill="currentColor"
           />
-          <rect x="16" y="14" width="8" height="10" rx="1" fill="#00843D" />
-          <circle cx="20" cy="27" r="1.5" fill="#EF3340" />{" "}
+          <rect x="16" y="14" width="8" height="10" rx="1" className="fill-primary" />
+          <circle cx="20" cy="27" r="1.5" className="fill-foreground" />
           {/* Gold home button */}
         </svg>
       </div>
@@ -39,14 +39,14 @@ export default function Logo() {
       {/* Logo Wordmark - UAE Modern */}
       <div className="flex flex-col leading-tight -space-y-0.5">
         <div className="flex items-center">
-          <span className="text-base font-bold text-[#1A1A1A]">UAE</span>
-          <span className="text-base font-bold text-[#00843D]">
+          <span className="text-base font-bold text-primary">UAE</span>
+          <span className="text-base font-bold text-foreground">
             MobileGuide
           </span>
         </div>
         <div className="flex items-center gap-1">
-          {/* <UAEFlag className="w-3 h-2" /> */}
-          <span className="text-[8px] font-bold text-[#EF3340] tracking-widest uppercase">
+          <UAEFlag className="w-3 h-2" />
+          <span className="text-[8px] font-bold text-primary tracking-widest uppercase">
             Choose smart. Buy right.
           </span>
         </div>

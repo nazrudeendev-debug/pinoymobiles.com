@@ -12,10 +12,10 @@ export default function PhoneListCard({ phone, index }) {
   return (
     <Link
       href={`/phones/${phone.slug}`}
-      className="group relative bg-white rounded-xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-lg hover:border-violet-400/50 hover:shadow-violet-600/10 transition-all duration-300"
+      className="group relative bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563eb]/50 hover:shadow-[#2563eb]/10 transition-all duration-300"
     >
       {watchingCount > 100 && (
-        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full px-2.5 py-1.5 text-[11px] font-semibold text-slate-700 shadow-md">
+        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 bg-[#FFFFFF]/95 backdrop-blur-sm rounded-full px-2.5 py-1.5 text-[11px] font-semibold text-[#232323] shadow-md">
           <Eye className="h-3.5 w-3.5 text-emerald-600" />
           <span>{watchingCount}+ watching</span>
         </div>
@@ -26,7 +26,7 @@ export default function PhoneListCard({ phone, index }) {
           e.preventDefault();
           setIsFavorite(!isFavorite);
         }}
-        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/95 backdrop-blur-sm hover:bg-white shadow-md transition-all active:scale-90"
+        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-[#FFFFFF]/95 backdrop-blur-sm hover:bg-[#FFFFFF] shadow-md transition-all active:scale-90"
       >
         <Heart
           className={`h-4 w-4 ${
@@ -37,7 +37,7 @@ export default function PhoneListCard({ phone, index }) {
         />
       </button>
 
-      <div className="relative h-36 sm:h-44 bg-slate-50/80 flex items-center justify-center overflow-hidden group-hover:bg-slate-50 transition-colors">
+      <div className="relative h-36 sm:h-44 bg-[#F7F7F7]/80 flex items-center justify-center overflow-hidden group-hover:bg-[#F7F7F7] transition-colors">
         <Image
           src={`/mobile${(index % 5) + 1}.jpg`}
           alt={phone.name}
