@@ -9,7 +9,7 @@ export function FeaturedBlogCard({ blog }) {
     <section className="bg-white border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 py-8 md:py-12">
         <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-          <Link href="/" className="hover:text-violet-600">
+          <Link href="/" className="hover:text-primary">
             Home
           </Link>
           <span>/</span>
@@ -26,7 +26,7 @@ export function FeaturedBlogCard({ blog }) {
             </h1>
             <div className="flex items-center gap-4 mt-5">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-linear-to-br from-violet-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-violet-500/25">
+                <div className="w-10 h-10 bg-linear-to-br from-primary to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-violet-500/25">
                   <span className="text-white font-bold">P</span>
                 </div>
                 <div>

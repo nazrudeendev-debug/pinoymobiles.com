@@ -49,7 +49,7 @@ export default function PriceCard({ retailer, isLowestPrice }) {
           type="checkbox"
           checked={isSelected}
           onChange={(e) => setIsSelected(e.target.checked)}
-          className="w-5 h-5 rounded-md cursor-pointer accent-violet-600"
+          className="w-5 h-5 rounded-md cursor-pointer accent-primary"
         />
       </div>
 
@@ -92,7 +92,7 @@ export default function PriceCard({ retailer, isLowestPrice }) {
       </div>
 
       {/* CTA */}
-      <button className="w-full bg-linear-to-r from-violet-600 to-purple-600 text-white py-3 rounded-xl font-semibold text-sm mb-3 hover:from-violet-700 hover:to-purple-700 transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2">
+      <button className="w-full bg-linear-to-r from-primary to-purple-600 text-white py-3 rounded-xl font-semibold text-sm mb-3 hover:from-violet-700 hover:to-purple-700 transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2">
         View Offer
         <ExternalLink className="h-4 w-4" />
       </button>
@@ -100,7 +100,7 @@ export default function PriceCard({ retailer, isLowestPrice }) {
       {/* Expand Details */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-center gap-2 text-violet-600 text-sm font-medium hover:text-violet-700 transition-colors py-1"
+        className="w-full flex items-center justify-center gap-2 text-primary text-sm font-medium hover:text-violet-700 transition-colors py-1"
       >
         {isExpanded ? "Hide" : "Show"} Details
         <ChevronDown
@@ -115,11 +115,11 @@ export default function PriceCard({ retailer, isLowestPrice }) {
         <div className="mt-4 pt-4 border-t border-slate-100 space-y-3">
           <div className="space-y-2.5 text-sm">
             <div className="flex items-center gap-3 text-slate-700">
-              <Shield className="h-4 w-4 text-violet-600" />
+              <Shield className="h-4 w-4 text-primary" />
               <span>Warranty: {retailer.warranty}</span>
             </div>
             <div className="flex items-center gap-3 text-slate-700">
-              <RotateCcw className="h-4 w-4 text-violet-600" />
+              <RotateCcw className="h-4 w-4 text-primary" />
               <span>Returns: {retailer.returns}</span>
             </div>
             <div className="flex items-center gap-3 text-slate-600">

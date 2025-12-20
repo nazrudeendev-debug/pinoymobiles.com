@@ -46,7 +46,7 @@ export function BlogContent({ blog }) {
               <h3 className="font-bold text-slate-900 text-lg">
                 {blog.author}
               </h3>
-              <p className="text-sm text-violet-600 font-medium mb-2">
+              <p className="text-sm text-primary font-medium mb-2">
                 Mobile Technology Expert
               </p>
               <p className="text-sm text-slate-600">

@@ -5,7 +5,7 @@ export default function PhonePageHeader() {
     <div className="bg-white border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 py-6">
         <nav className="flex items-center gap-2 text-sm text-slate-500 mb-4">
-          <Link href="/" className="hover:text-violet-600">
+          <Link href="/" className="hover:text-primary">
             Home
           </Link>
           <span>/</span>

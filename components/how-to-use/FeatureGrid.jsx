@@ -17,7 +17,7 @@ export function FeatureGrid({ features }) {
             return (
               <div key={idx} className="text-center">
                 <div className="inline-flex h-16 w-16 items-center justify-center rounded-xl bg-linear-to-br from-violet-50 to-purple-50 border border-violet-100 mb-4">
-                  <Icon className="h-8 w-8 text-violet-600" />
+                  <Icon className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">
                   {feature.title}

@@ -34,7 +34,7 @@ export function BlogSidebar({ recentBlogs }) {
                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="text-sm font-medium text-slate-900 group-hover:text-violet-600 transition-colors line-clamp-2">
+                  <h4 className="text-sm font-medium text-slate-900 group-hover:text-primary transition-colors line-clamp-2">
                     {blog.title}
                   </h4>
                   <p className="text-xs text-slate-500 mt-1">{blog.readTime}</p>
@@ -53,7 +53,7 @@ export function BlogSidebar({ recentBlogs }) {
               <Link
                 key={cat}
                 href="/blogs"
-                className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-violet-50 text-slate-600 hover:text-violet-600 transition-colors"
+                className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-violet-50 text-slate-600 hover:text-primary transition-colors"
               >
                 <span className="text-sm">{cat}</span>
                 <ChevronRight className="w-4 h-4" />
@@ -62,7 +62,7 @@ export function BlogSidebar({ recentBlogs }) {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-violet-600 to-purple-700 rounded-xl p-6 text-white">
+        <div className="bg-gradient-to-br from-primary to-purple-700 rounded-xl p-6 text-white">
           <h3 className="font-bold text-lg mb-2">Stay Updated</h3>
           <p className="text-sm text-violet-100 mb-4">
             Get the latest phone reviews and deals delivered to your inbox.
@@ -72,7 +72,7 @@ export function BlogSidebar({ recentBlogs }) {
             placeholder="Enter your email"
             className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-violet-200 text-sm focus:outline-none focus:ring-2 focus:ring-white/50 mb-3"
           />
-          <button className="w-full py-2.5 bg-white text-violet-600 font-semibold rounded-lg hover:bg-violet-50 transition-colors text-sm">
+          <button className="w-full py-2.5 bg-white text-primary font-semibold rounded-lg hover:bg-violet-50 transition-colors text-sm">
             Subscribe
           </button>
         </div>

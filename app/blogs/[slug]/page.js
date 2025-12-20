@@ -46,7 +46,7 @@ export default async function BlogDetailPage({ params }) {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#F7F7F7]">
+      <main className="min-h-screen bg-background">
         <BlogHeader blog={blog} />
 
         <div className="mx-auto max-w-7xl px-4 py-10">
@@ -59,11 +59,11 @@ export default async function BlogDetailPage({ params }) {
           </div>
         </div>
 
-        <div className="bg-[#F7F7F7] border-t border-[#E5E5E5]">
+        <div className="bg-background border-t border-border">
           <div className="mx-auto max-w-7xl px-4 py-6">
             <Link
               href="/blogs"
-              className="inline-flex items-center gap-2 text-violet-600 hover:text-violet-700 font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
               Back to all articles

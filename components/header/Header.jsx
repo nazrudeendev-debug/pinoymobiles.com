@@ -37,7 +37,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="border-b border-[#E5E5E5]">
+      <div className="border-b border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           {/* Left: Mobile Menu + Logo */}
           <div className="flex items-center gap-3">
@@ -46,7 +46,7 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden h-10 w-10 rounded-lg border border-[#E5E5E5] bg-[#F7F7F7] hover:bg-[#E5E5E5] text-[#232323] transition-colors"
+                  className="md:hidden h-10 w-10 rounded-lg border border-border bg-muted hover:bg-border text-foreground transition-colors"
                 >
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open main menu</span>
@@ -54,11 +54,11 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent
                 side="left"
-                className="w-80 overflow-y-auto p-0 border-r-0 bg-[#FFFFFF]"
+                className="w-80 overflow-y-auto p-0 border-r-0 bg-card"
               >
                 <div className="flex flex-col h-full">
                   {/* Mobile Logo */}
-                  <div className="border-b border-[#E5E5E5] px-5 py-4 bg-[#F7F7F7]">
+                  <div className="border-b border-border px-5 py-4 bg-muted">
                     <Logo />
                   </div>
 
@@ -73,12 +73,12 @@ export default function Header() {
                   </div>
 
                   {/* Mobile CTA */}
-                  <div className="mt-auto border-t border-[#E5E5E5] px-5 py-4 bg-[#F7F7F7]">
-                    <p className="text-xs text-[#232323] mb-3 font-medium">
+                  <div className="mt-auto border-t border-border px-5 py-4 bg-muted">
+                    <p className="text-xs text-foreground mb-3 font-medium">
                       🔔 Subscribe to price-drop alerts
                     </p>
                     <Button
-                      className="w-full rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold shadow-lg shadow-[#2563eb]/20 px-4 py-2.5 transition-all active:scale-95"
+                      className="w-full rounded-lg bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/20 px-4 py-2.5 transition-all active:scale-95"
                       size="md"
                     >
                       <Bell className="mr-2 h-4 w-4" /> Enable Alerts
@@ -107,7 +107,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden h-10 w-10 rounded-lg border border-[#E5E5E5] bg-[#F7F7F7] hover:bg-[#E5E5E5] text-[#232323] transition-colors"
+              className="md:hidden h-10 w-10 rounded-lg border border-border bg-muted hover:bg-border text-foreground transition-colors"
             >
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
@@ -117,16 +117,16 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="hidden md:flex h-10 w-10 rounded-lg border border-[#E5E5E5] bg-[#F7F7F7] hover:bg-[#E5E5E5] text-[#232323] relative transition-colors"
+              className="hidden md:flex h-10 w-10 rounded-lg border border-border bg-muted hover:bg-border text-foreground relative transition-colors"
             >
               <Heart className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-[#2563eb] text-[10px] font-bold text-white flex items-center justify-center shadow-sm">
+              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-[10px] font-bold text-white flex items-center justify-center shadow-sm">
                 3
               </span>
             </Button>
 
             {/* CTA Button - Filipino Enhanced */}
-            <Button className="hidden sm:inline-flex rounded-lg px-4 h-10 bg-linear-to-r from-[#2563eb] to-[#1d4ed8] hover:from-[#1d4ed8] hover:to-[#2563eb] text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/30 transition-all active:scale-95 uae-shine">
+            <Button className="hidden sm:inline-flex rounded-lg px-4 h-10 bg-gradient-to-r from-primary to-primary hover:from-primary/90 hover:to-primary/90 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition-all active:scale-95 uae-shine">
               <Bell className="mr-2 h-4 w-4" />
               <span className="hidden lg:inline">Price Alerts</span>
               <span className="lg:hidden">Alerts</span>

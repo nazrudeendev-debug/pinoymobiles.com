@@ -6,7 +6,7 @@ import { formatCurrency } from "@/lib/format";
 
 export default function PhoneCard({ phone, index = 0 }) {
   return (
-    <article className="flex h-full flex-col justify-between rounded-2xl border border-[#E5E5E5] bg-[#FFFFFF] overflow-hidden hover:shadow-lg hover:border-[#2563eb]/20 transition-all duration-300 group">
+    <article className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card overflow-hidden hover:shadow-lg hover:border-primary/20 transition-all duration-300 group">
       {/* Image Area */}
       <div className="relative h-40 bg-linear-to-br from-muted/60 to-muted/40 flex items-center justify-center overflow-hidden">
         <Image

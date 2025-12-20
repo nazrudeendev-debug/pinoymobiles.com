@@ -23,9 +23,8 @@ export default function CarouselPhoneCard({
       className="shrink-0 w-[calc(50%-8px)] md:w-[calc(20%-13px)] group snap-start"
     >
       <div
-        className={`relative bg-white rounded-2xl border border-slate-200 p-4 hover:shadow-lg ${
-          hoverColor.split(" ")[0]
-        } transition-all duration-300 uae-card-hover uae-shine`}
+        className={`relative bg-card rounded-2xl border border-border p-4 hover:shadow-lg ${hoverColor.split(" ")[0]
+          } transition-all duration-300 uae-card-hover uae-shine`}
       >
         {/* Badge */}
         {badge && (
@@ -74,7 +73,7 @@ export default function CarouselPhoneCard({
         {/* Content */}
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-semibold text-slate-500 uppercase">
+            <span className="text-[10px] font-semibold text-muted-foreground uppercase">
               {phone.brand}
             </span>
             {/* UAE Score Badge */}
@@ -82,24 +81,23 @@ export default function CarouselPhoneCard({
           </div>
 
           <h3
-            className={`text-sm font-semibold text-slate-900 line-clamp-2 ${
-              hoverColor.split(" ")[1] || ""
-            } transition-colors min-h-10`}
+            className={`text-sm font-semibold text-foreground line-clamp-2 ${hoverColor.split(" ")[1] || ""
+              } transition-colors min-h-10`}
           >
             {phone.name}
           </h3>
 
-          <div className="pt-2 border-t border-slate-100">
+          <div className="pt-2 border-t border-border">
             <div className="flex items-center justify-between">
               <div>
                 <p className={`text-lg font-bold ${priceColor}`}>
                   {formatCurrency(phone.price)}
                 </p>
                 {subtitle && (
-                  <p className="text-[10px] text-slate-500">{subtitle}</p>
+                  <p className="text-[10px] text-muted-foreground">{subtitle}</p>
                 )}
               </div>
-              <span className="text-[9px] text-slate-400 text-right">
+              <span className="text-[9px] text-muted-foreground text-right">
                 from 5+ stores
               </span>
             </div>

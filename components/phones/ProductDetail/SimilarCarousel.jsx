@@ -75,14 +75,14 @@ export default function SimilarCarousel({ currentPhone, allPhones }) {
                 "hover:border-emerald-300 group-hover:text-emerald-600",
                 "hover:border-blue-300 group-hover:text-blue-600",
                 "hover:border-orange-300 group-hover:text-orange-600",
-                "hover:border-violet-300 group-hover:text-violet-600",
+                "hover:border-violet-300 group-hover:text-primary",
                 "hover:border-pink-300 group-hover:text-pink-600",
               ][index % 5];
               const priceColors = [
                 "text-emerald-600",
                 "text-blue-600",
                 "text-orange-600",
-                "text-violet-600",
+                "text-primary",
                 "text-pink-600",
               ][index % 5];
               return (

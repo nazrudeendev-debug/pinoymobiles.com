@@ -21,7 +21,7 @@ const actionCards = [
     title: "All Phones",
     description: "Browse with reviews & prices",
     href: "/phones",
-    color: "from-[#00843D] to-[#006B31]",
+    color: "from-primary to-primary/80",
   },
   {
     id: "by-budget",
@@ -29,7 +29,7 @@ const actionCards = [
     title: "By Budget",
     description: "Under 500, 1000, 2000 AED",
     href: "/phones?sort=budget",
-    color: "from-[#10B981] to-[#059669]",
+    color: "from-accent to-accent/80",
     badge: "🔥",
   },
   {
@@ -38,7 +38,7 @@ const actionCards = [
     title: "Best for You",
     description: "Camera • Gaming • Work",
     href: "/phones?filter=purpose",
-    color: "from-[#EF3340] to-[#C41E2A]",
+    color: "from-primary to-secondary",
   },
   {
     id: "compare",
@@ -46,33 +46,33 @@ const actionCards = [
     title: "Compare",
     description: "Side-by-side comparison",
     href: "/compare",
-    color: "from-[#EF3340] to-[#C41E2A]",
+    color: "from-primary to-accent",
   },
 ];
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-b from-[#FAFAFA] to-white py-6 md:py-8 arabic-pattern">
+    <section className="bg-background py-6 md:py-8 arabic-pattern">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         {/* Main Hero Card */}
-        <div className="bg-[#FFFFFF] rounded-2xl shadow-lg border border-[#E5E5E5] p-5 md:p-8 relative overflow-hidden">
+        <div className="bg-card rounded-2xl shadow-lg border border-border p-5 md:p-8 relative overflow-hidden">
           {/* Subtle background pattern */}
           <div className="absolute inset-0 sunrays-pattern opacity-30 pointer-events-none" />
 
           <div className="relative">
             {/* Top: Title + Search */}
             <div className="text-center mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00843D]/10 text-[#00843D] text-xs font-bold mb-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-bold mb-3">
                 <Star className="w-3.5 h-3.5 fill-current" />
                 #1 Phone Guide in UAE
               </div>
-              <h1 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-2 flex items-center justify-center gap-2">
+              <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2 flex items-center justify-center gap-2">
                 Find the Right Phone for You
                 <UAEFlag className="w-7 h-5" />
               </h1>
-              <p className="text-sm md:text-base text-slate-500 max-w-lg mx-auto">
+              <p className="text-sm md:text-base text-muted-foreground max-w-lg mx-auto">
                 Honest reviews, UAE Scores & best prices from{" "}
-                <span className="text-[#10B981] font-semibold">
+                <span className="text-success font-semibold">
                   trusted UAE stores
                 </span>
               </p>
@@ -89,7 +89,7 @@ export default function Hero() {
                 <Link
                   key={card.id}
                   href={card.href}
-                  className="group relative flex items-center gap-3 p-3 md:p-4 rounded-xl bg-[#F7F7F7] border border-[#E5E5E5] hover:border-[#B0B0B0] hover:bg-[#FFFFFF] hover:shadow-md transition-all duration-200"
+                  className="group relative flex items-center gap-3 p-3 md:p-4 rounded-xl bg-muted border border-border hover:border-muted-foreground hover:bg-card hover:shadow-md transition-all duration-200"
                 >
                   {/* Badge */}
                   {card.badge && (
@@ -107,32 +107,32 @@ export default function Hero() {
 
                   {/* Text */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-bold text-[#1A1A1A] group-hover:text-[#00843D] transition-colors truncate">
+                    <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors truncate">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-slate-500 truncate">
+                    <p className="text-xs text-muted-foreground truncate">
                       {card.description}
                     </p>
                   </div>
 
                   {/* Arrow on hover */}
-                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-[#00843D] opacity-0 group-hover:opacity-100 transition-all shrink-0 hidden md:block" />
+                  <ArrowRight className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all shrink-0 hidden md:block" />
                 </Link>
               ))}
             </div>
 
             {/* Bottom stats line */}
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-center gap-4 md:gap-8 text-xs text-slate-400">
+            <div className="mt-6 pt-4 border-t border-border flex items-center justify-center gap-4 md:gap-8 text-xs text-muted-foreground">
               <span>
-                <strong className="text-[#00843D]">6,300+</strong> phones
+                <strong className="text-success">6,300+</strong> phones
               </span>
               <span className="hidden sm:inline">•</span>
               <span className="hidden sm:inline">
-                <strong className="text-[#008B8B]">50+</strong> brands
+                <strong className="text-primary">50+</strong> brands
               </span>
               <span>•</span>
               <span>
-                <strong className="text-[#EF3340]">5+</strong> trusted stores
+                <strong className="text-accent">5+</strong> trusted stores
               </span>
             </div>
           </div>

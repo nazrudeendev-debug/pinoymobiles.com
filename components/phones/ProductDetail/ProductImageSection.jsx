@@ -7,13 +7,13 @@ export function ProductBreadcrumb({ phone }) {
       <div className=" bg-white border-b border-slate-200 md:hidden">
         <div className="px-4 py-2.5">
           <nav className="flex items-center gap-1 text-xs text-slate-500 overflow-x-auto scrollbar-hide">
-            <Link href="/" className="hover:text-violet-600 whitespace-nowrap">
+            <Link href="/" className="hover:text-primary whitespace-nowrap">
               Home
             </Link>
             <ChevronRight className="h-3 w-3 shrink-0" />
             <Link
               href="/phones"
-              className="hover:text-violet-600 whitespace-nowrap"
+              className="hover:text-primary whitespace-nowrap"
             >
               Phones
             </Link>
@@ -27,20 +27,20 @@ export function ProductBreadcrumb({ phone }) {
 
       <div className=" max-w-7xl mx-auto hidden md:block px-6 pt-4">
         <nav className="flex items-center gap-1.5 text-sm text-slate-500">
-          <Link href="/" className="hover:text-violet-600 transition-colors">
+          <Link href="/" className="hover:text-primary transition-colors">
             Home
           </Link>
           <ChevronRight className="h-3.5 w-3.5" />
           <Link
             href="/phones"
-            className="hover:text-violet-600 transition-colors"
+            className="hover:text-primary transition-colors"
           >
             Phones
           </Link>
           <ChevronRight className="h-3.5 w-3.5" />
           <Link
             href={`/phones?brand=${phone.brand}`}
-            className="hover:text-violet-600 transition-colors"
+            className="hover:text-primary transition-colors"
           >
             {phone.brand}
           </Link>
@@ -82,7 +82,7 @@ export function ProductImageSection({
               }`}
             />
           </button>
-          <button className="p-2 rounded-full bg-white/90 backdrop-blur text-slate-500 hover:text-violet-600 shadow-sm transition-all">
+          <button className="p-2 rounded-full bg-white/90 backdrop-blur text-slate-500 hover:text-primary shadow-sm transition-all">
             <Share2 className="h-4 w-4 md:h-5 md:w-5" />
           </button>
         </div>
@@ -102,7 +102,7 @@ export function ProductImageSection({
             onClick={() => setSelectedImage(i)}
             className={`w-14 h-14 md:w-16 md:h-16 rounded-lg md:rounded-xl border-2 transition-all ${
               selectedImage === i
-                ? "border-violet-600 bg-slate-50"
+                ? "border-primary bg-slate-50"
                 : "border-slate-200 hover:border-slate-300 bg-white"
             }`}
           >

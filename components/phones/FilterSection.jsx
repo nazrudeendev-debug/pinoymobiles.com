@@ -37,7 +37,7 @@ export default function FilterSection({
               <div
                 className={`flex h-5 w-5 items-center justify-center rounded border transition-colors ${
                   selected.includes(item)
-                    ? "border-violet-600 bg-violet-600"
+                    ? "border-primary bg-primary"
                     : "border-slate-300 bg-white"
                 }`}
                 onClick={() => onToggle(filterKey, item)}

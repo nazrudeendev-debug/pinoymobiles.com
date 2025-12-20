@@ -13,7 +13,7 @@ export default function PopularPhones() {
     <PhoneCarousel
       label="💖 UAE Favorites"
       labelIcon=""
-      labelColor="text-[#00843D]"
+      labelColor="text-primary"
       title="Most Loved in UAE"
       viewAllHref="/phones"
       viewAllText="View All"
@@ -25,10 +25,12 @@ export default function PopularPhones() {
           phone={phone}
           index={index}
           badge="💖 Favorite"
-          badgeColors="bg-[#00843D]/10 border-[#00843D]/30 text-[#00843D]"
-          imageColors="from-[#00843D]/5 to-[#EF3340]/5"
-          hoverColor="hover:border-[#00843D]/40 group-hover:text-[#00843D]"
-          priceColor="text-[#00843D]"
+          label="Popular Phones"
+          labelColor="text-primary"
+          badgeColors="bg-destructive/10 border-destructive/20 text-destructive"
+          imageColors="from-secondary to-white"
+          hoverColor="group-hover:border-primary/50"
+          priceColor="text-success font-bold"
           subtitle="Top Choice"
           showTrustedBadge={true}
         />

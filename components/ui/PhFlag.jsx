@@ -13,7 +13,7 @@ export default function PhFlag({ className = "w-5 h-4" }) {
       {/* Red stripe */}
       <rect y="12" width="36" height="12" fill="#CE1126" />
       {/* White triangle */}
-      <polygon points="0,0 16,12 0,24" fill="#FFFFFF" />
+      <polygon points="0,0 16,12 0,24" fill="bg-card" />
       {/* Sun - golden yellow */}
       <circle cx="6" cy="12" r="2.5" fill="#FCD116" />
       {/* Sun rays */}

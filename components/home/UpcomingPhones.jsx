@@ -9,7 +9,7 @@ export default function UpcomingPhones() {
     <PhoneCarousel
       label="⏰ Abangan!"
       labelIcon=""
-      labelColor="text-[#0D1B2A]"
+      labelColor="text-primary"
       title="Mga Paparating na Phones"
       viewAllHref="/phones"
       viewAllText="Tingnan Lahat"

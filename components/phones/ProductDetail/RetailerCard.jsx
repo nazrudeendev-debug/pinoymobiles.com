@@ -75,7 +75,7 @@ export function RetailerCard({ retailer, isLowest }) {
                 {retailer.shipping} • {retailer.deliveryDays} days
               </p>
             </div>
-            <button className="bg-violet-600 hover:bg-violet-700 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg md:rounded-xl font-semibold text-sm transition-all flex items-center gap-1.5 shrink-0">
+            <button className="bg-primary hover:bg-violet-700 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg md:rounded-xl font-semibold text-sm transition-all flex items-center gap-1.5 shrink-0">
               <span className="hidden md:inline">Go to store</span>
               <span className="md:hidden">View</span>
               <ExternalLink className="h-4 w-4" />

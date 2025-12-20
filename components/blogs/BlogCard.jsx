@@ -4,7 +4,7 @@ import { Clock, Bookmark } from "lucide-react";
 
 export function BlogCard({ blog }) {
   return (
-    <article className="bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-lg hover:border-violet-300/50 hover:shadow-violet-600/10 transition-all duration-300">
+    <article className="bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-lg hover:border-violet-300/50 hover:shadow-primary/10 transition-all duration-300">
       <Link href={`/blogs/${blog.slug}`} className="group">
         <div className="relative aspect-16/9 md:aspect-4/3 bg-slate-100 overflow-hidden">
           <Image
@@ -22,7 +22,7 @@ export function BlogCard({ blog }) {
             {blog.category}
           </span>
 
-          <h2 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-violet-600 transition-colors line-clamp-2 mb-3 leading-snug">
+          <h2 className="text-lg md:text-xl font-bold text-slate-900 group-hover:text-primary transition-colors line-clamp-2 mb-3 leading-snug">
             {blog.title}
           </h2>
 
@@ -32,7 +32,7 @@ export function BlogCard({ blog }) {
 
           <div className="flex items-center justify-between pt-4 border-t border-slate-100/80">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-linear-to-br from-violet-600 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-md">
+              <div className="w-9 h-9 bg-linear-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-md">
                 {blog.author.charAt(0)}
               </div>
               <div className="text-xs text-slate-500">
@@ -43,7 +43,7 @@ export function BlogCard({ blog }) {
                 </p>
               </div>
             </div>
-            <button className="p-2 hover:bg-slate-100 rounded-lg transition-all text-slate-400 hover:text-violet-600 hover:scale-110">
+            <button className="p-2 hover:bg-slate-100 rounded-lg transition-all text-slate-400 hover:text-primary hover:scale-110">
               <Bookmark className="w-4 h-4" />
             </button>
           </div>

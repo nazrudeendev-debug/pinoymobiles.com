@@ -7,7 +7,7 @@ export function HowToStep({ step }) {
       <div className="flex items-start gap-4">
         <div className="flex-shrink-0">
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-violet-100">
-            <Icon className="h-6 w-6 text-violet-600" />
+            <Icon className="h-6 w-6 text-primary" />
           </div>
         </div>
         <div className="flex-1">
@@ -23,7 +23,7 @@ export function HowToStep({ step }) {
                 key={idx}
                 className="flex items-start gap-2 text-sm text-slate-600"
               >
-                <ChevronRight className="h-4 w-4 text-violet-600 flex-shrink-0 mt-0.5" />
+                <ChevronRight className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                 <span>{tip}</span>
               </li>
             ))}

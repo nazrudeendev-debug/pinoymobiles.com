@@ -72,7 +72,7 @@ export default function MobileFilterSheet({
           </button>
           <button
             onClick={() => setShowFilters(false)}
-            className="flex-1 py-3 rounded-xl bg-violet-600 text-sm font-medium text-white hover:bg-violet-700"
+            className="flex-1 py-3 rounded-xl bg-primary text-sm font-medium text-white hover:bg-violet-700"
           >
             Show {filteredCount} results
           </button>

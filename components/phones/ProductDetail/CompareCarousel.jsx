@@ -16,7 +16,7 @@ export default function CompareCarousel({
     >
       <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-violet-600">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
             📊 Compare
           </p>
           <h2 className="mt-1 text-xl md:text-2xl font-bold tracking-tight text-slate-900">
@@ -56,7 +56,7 @@ export default function CompareCarousel({
           </button>
           <Link
             href="/compare"
-            className="text-sm font-medium text-violet-600 hover:opacity-80 hidden md:flex items-center gap-1 ml-2"
+            className="text-sm font-medium text-primary hover:opacity-80 hidden md:flex items-center gap-1 ml-2"
           >
             View All
             <ArrowRight className="h-4 w-4" />
@@ -80,14 +80,14 @@ export default function CompareCarousel({
                 "from-pink-50 to-rose-50",
               ][index % 5];
               const hoverColors = [
-                "hover:border-violet-300 group-hover:text-violet-600",
+                "hover:border-violet-300 group-hover:text-primary",
                 "hover:border-blue-300 group-hover:text-blue-600",
                 "hover:border-emerald-300 group-hover:text-emerald-600",
                 "hover:border-orange-300 group-hover:text-orange-600",
                 "hover:border-pink-300 group-hover:text-pink-600",
               ][index % 5];
               const priceColors = [
-                "text-violet-600",
+                "text-primary",
                 "text-blue-600",
                 "text-emerald-600",
                 "text-orange-600",

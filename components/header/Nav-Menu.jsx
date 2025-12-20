@@ -27,7 +27,7 @@ export default function NavMenu({ vertical = false }) {
             <Link
               key={item.title}
               href={item.href}
-              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#232323] hover:bg-[#2563eb]/10 hover:text-[#2563eb] transition-colors font-medium"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-foreground hover:bg-primary/10 hover:text-primary transition-colors font-medium"
             >
               <Icon className="h-4 w-4" />
               {item.title}
@@ -44,7 +44,7 @@ export default function NavMenu({ vertical = false }) {
         <Link
           key={item.title}
           href={item.href}
-          className="px-3.5 py-2 rounded-lg text-sm font-medium text-[#232323] hover:text-[#2563eb] hover:bg-[#E5E5E5] transition-colors"
+          className="px-3.5 py-2 rounded-lg text-sm font-medium text-foreground hover:text-primary hover:bg-[border-border] transition-colors"
         >
           {item.title}
         </Link>

@@ -19,7 +19,7 @@ export default function SimilarPhones({ currentPhone, allPhones }) {
       <PhoneCarousel
         label="Similar"
         labelIcon="📱"
-        labelColor="text-violet-600"
+        labelColor="text-primary"
         title="Similar Phones UAE Buyers Compare"
         viewAllHref={`/phones?brand=${currentPhone.brand}`}
         viewAllText="View All from this Brand"
@@ -33,8 +33,8 @@ export default function SimilarPhones({ currentPhone, allPhones }) {
             badge="🔍 Similar"
             badgeColors="bg-violet-100 border-violet-300 text-violet-700"
             imageColors="from-violet-50 to-blue-50"
-            hoverColor="hover:border-violet-300 group-hover:text-violet-600"
-            priceColor="text-violet-600"
+            hoverColor="hover:border-violet-300 group-hover:text-primary"
+            priceColor="text-primary"
             subtitle="Often compared"
           />
         ))}

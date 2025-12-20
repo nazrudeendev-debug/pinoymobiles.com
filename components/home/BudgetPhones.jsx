@@ -64,7 +64,7 @@ export default function BudgetPhones() {
       {/* Header - Same pattern as other sections */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-[#008B8B]">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
             💰 Phones by Budget
           </p>
           <h2 className="mt-1 text-xl md:text-2xl font-bold tracking-tight text-foreground">
@@ -75,22 +75,22 @@ export default function BudgetPhones() {
           <button
             type="button"
             onClick={() => scroll("left")}
-            className="h-8 w-8 rounded-full border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center transition-colors sari-sari-glow"
+            className="h-8 w-8 rounded-full border border-border bg-card hover:bg-muted flex items-center justify-center transition-colors"
             aria-label="Scroll left"
           >
-            <ChevronLeft className="h-4 w-4 text-slate-600" />
+            <ChevronLeft className="h-4 w-4 text-muted-foreground" />
           </button>
           <button
             type="button"
             onClick={() => scroll("right")}
-            className="h-8 w-8 rounded-full border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center transition-colors sari-sari-glow"
+            className="h-8 w-8 rounded-full border border-border bg-card hover:bg-muted flex items-center justify-center transition-colors"
             aria-label="Scroll right"
           >
-            <ChevronRight className="h-4 w-4 text-slate-600" />
+            <ChevronRight className="h-4 w-4 text-muted-foreground" />
           </button>
           <Link
             href={`/phones?minPrice=${activeRange.min}&maxPrice=${activeRange.max}`}
-            className="text-sm font-medium text-[#10B981] hover:opacity-80 hidden md:flex items-center gap-1 ml-2"
+            className="text-sm font-medium text-primary hover:opacity-80 hidden md:flex items-center gap-1 ml-2"
           >
             Tingnan Lahat
             <ArrowRight className="h-4 w-4" />
@@ -104,11 +104,10 @@ export default function BudgetPhones() {
           <button
             key={range.id}
             onClick={() => setActiveTab(range.id)}
-            className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-200 rounded-full border ${
-              activeTab === range.id
-                ? "text-white bg-[#10B981] border-[#10B981] shadow-sm"
-                : "text-slate-600 bg-white border-slate-200 hover:border-[#10B981]/50 hover:text-[#10B981]"
-            }`}
+            className={`px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-200 rounded-full border ${activeTab === range.id
+              ? "text-white bg-primary border-primary shadow-sm"
+              : "text-muted-foreground bg-card border-border hover:border-primary/50 hover:text-primary"
+              }`}
           >
             {range.label}
           </button>
@@ -128,10 +127,10 @@ export default function BudgetPhones() {
                 phone={phone}
                 index={index}
                 badge="💰 BEST VALUE"
-                badgeColors="bg-[#10B981]/10 border-[#10B981]/30 text-[#10B981]"
-                imageColors="from-[#10B981]/5 to-emerald-50"
-                hoverColor="hover:border-[#10B981]/40 group-hover:text-[#10B981]"
-                priceColor="text-[#10B981]"
+                badgeColors="bg-emerald-50 border-emerald-200 text-emerald-700"
+                imageColors="from-emerald-50/50 to-teal-50/50"
+                hoverColor="hover:border-emerald-300 group-hover:text-emerald-700"
+                priceColor="text-foreground"
                 subtitle="Best value"
                 showSulitBadge={true}
               />
@@ -150,7 +149,7 @@ export default function BudgetPhones() {
       {/* Mobile View All Link */}
       <Link
         href={`/phones?minPrice=${activeRange.min}&maxPrice=${activeRange.max}`}
-        className="mt-4 flex md:hidden items-center justify-center gap-1 text-sm font-medium text-[#10B981] hover:opacity-80"
+        className="mt-4 flex md:hidden items-center justify-center gap-1 text-sm font-medium text-primary hover:opacity-80"
       >
         View All Best Value Phones
         <ArrowRight className="h-4 w-4" />

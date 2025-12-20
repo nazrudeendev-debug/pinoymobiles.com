@@ -14,13 +14,13 @@ export function BlogHeader({ blog }) {
     <div className="bg-white border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-4 py-4">
         <nav className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-          <Link href="/" className="hover:text-violet-600 transition-colors">
+          <Link href="/" className="hover:text-primary transition-colors">
             Home
           </Link>
           <ChevronRight className="w-4 h-4" />
           <Link
             href="/blogs"
-            className="hover:text-violet-600 transition-colors"
+            className="hover:text-primary transition-colors"
           >
             News & Reviews
           </Link>
@@ -45,7 +45,7 @@ export function BlogHeader({ blog }) {
 
           <div className="flex flex-wrap items-center gap-6 pb-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-violet-500/25">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center shadow-lg shadow-violet-500/25">
                 <span className="text-white font-bold text-lg">P</span>
               </div>
               <div>
@@ -70,7 +70,7 @@ export function BlogHeader({ blog }) {
             </div>
 
             <div className="ml-auto flex items-center gap-3">
-              <button className="p-2 rounded-full hover:bg-slate-100 text-slate-600 hover:text-violet-600 transition-all">
+              <button className="p-2 rounded-full hover:bg-slate-100 text-slate-600 hover:text-primary transition-all">
                 <Bookmark className="w-5 h-5" />
               </button>
               <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export function BlogHeader({ blog }) {
                 <button className="p-2 rounded-full hover:bg-sky-100 text-slate-600 hover:text-sky-600 transition-all">
                   <Twitter className="w-5 h-5" />
                 </button>
-                <button className="p-2 rounded-full hover:bg-slate-100 text-slate-600 hover:text-violet-600 transition-all">
+                <button className="p-2 rounded-full hover:bg-slate-100 text-slate-600 hover:text-primary transition-all">
                   <Link2 className="w-5 h-5" />
                 </button>
               </div>

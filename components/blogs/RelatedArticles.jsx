@@ -23,10 +23,10 @@ export function RelatedArticles({ relatedBlogs }) {
                 />
               </div>
               <div className="p-4">
-                <span className="text-xs font-medium text-violet-600 mb-2 block">
+                <span className="text-xs font-medium text-primary mb-2 block">
                   {blog.category}
                 </span>
-                <h3 className="font-semibold text-slate-900 group-hover:text-violet-600 transition-colors line-clamp-2">
+                <h3 className="font-semibold text-slate-900 group-hover:text-primary transition-colors line-clamp-2">
                   {blog.title}
                 </h3>
                 <div className="flex items-center gap-2 mt-3 text-xs text-slate-500">

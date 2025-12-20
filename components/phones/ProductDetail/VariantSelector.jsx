@@ -12,7 +12,7 @@ const colorMap = {
   "black-titanium": { name: "Black Titanium", hex: "#1A1A1A" },
   "desert-titanium": { name: "Desert Titanium", hex: "#C4A77D" },
   black: { name: "Black", hex: "#1A1A1A" },
-  white: { name: "White", hex: "#FFFFFF" },
+  white: { name: "White", hex: "bg-card" },
   blue: { name: "Blue", hex: "#3B82F6" },
   green: { name: "Green", hex: "#22C55E" },
   purple: { name: "Purple", hex: "#00A550" },
@@ -175,7 +175,7 @@ export default function VariantSelector({
                       <div className="h-full w-full flex items-center justify-center">
                         <Check
                           className={`h-4 w-4 ${
-                            colorData.hex === "#FFFFFF" ||
+                            colorData.hex === "bg-card" ||
                             colorData.hex === "#F5F5F5" ||
                             colorData.hex === "#FFFDD0"
                               ? "text-slate-800"
